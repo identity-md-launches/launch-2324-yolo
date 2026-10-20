@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "YoloToken",
+    "name": "yolo",
+    "symbol": "YOLO",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 6000,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0xee2aaa315cf7ed169f93148d30d24af9318dbb66"
+  },
+  "notes": "YoloToken (src/YoloToken.sol) is yolo (YOLO), a plain fixed-supply ERC-20 for @moneycanbuy_fun with 18 decimals. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 YOLO (1000000000000000000000000000 minor units) once to msg.sender, the launch factory, which pays all of it out: the swarm's share to the launch's MerkleDistributor, 60% to seed the IMD pool, and the remainder to economics.remainderTo. The token has no owner, no mint, no burn, no transfer fee, no pause and no blacklist, so the supply can never grow and every launch flow (factory to distributor, distributor claims, pool seed, swaps through the PoolManager) moves exactly what it says. An allowance of type(uint256).max is treated as infinite and not decremented. There are no application contracts and no initialization calls. pool.initialPrice is provenance only; the deployer derives the opening price from economics.initialMarketCapWei and totalSupply."
+}
